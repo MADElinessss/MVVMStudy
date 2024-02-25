@@ -9,21 +9,26 @@
 /* Begin PBXBuildFile section */
 		C132C0FF2B8B2FE100C660FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132C0FE2B8B2FE100C660FB /* AppDelegate.swift */; };
 		C132C1012B8B2FE100C660FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132C1002B8B2FE100C660FB /* SceneDelegate.swift */; };
-		C132C1032B8B2FE100C660FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132C1022B8B2FE100C660FB /* ViewController.swift */; };
 		C132C1062B8B2FE100C660FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C132C1042B8B2FE100C660FB /* Main.storyboard */; };
 		C132C1082B8B2FE300C660FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C132C1072B8B2FE300C660FB /* Assets.xcassets */; };
 		C132C10B2B8B2FE300C660FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C132C1092B8B2FE300C660FB /* LaunchScreen.storyboard */; };
+		C132C1132B8B300C00C660FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132C1122B8B300C00C660FB /* LoginViewController.swift */; };
+		C132C1162B8B307600C660FB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C132C1152B8B307600C660FB /* SnapKit */; };
+		C132C1182B8B357400C660FB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132C1172B8B357400C660FB /* Observable.swift */; };
+		C132C11A2B8B38F900C660FB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132C1192B8B38F900C660FB /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C132C0FB2B8B2FE100C660FB /* MVVMStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132C0FE2B8B2FE100C660FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C132C1002B8B2FE100C660FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C132C1022B8B2FE100C660FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C132C1052B8B2FE100C660FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C132C1072B8B2FE300C660FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C132C10A2B8B2FE300C660FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C132C10C2B8B2FE300C660FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C132C1122B8B300C00C660FB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C132C1172B8B357400C660FB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		C132C1192B8B38F900C660FB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C132C1162B8B307600C660FB /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +64,9 @@
 			children = (
 				C132C0FE2B8B2FE100C660FB /* AppDelegate.swift */,
 				C132C1002B8B2FE100C660FB /* SceneDelegate.swift */,
-				C132C1022B8B2FE100C660FB /* ViewController.swift */,
+				C132C1192B8B38F900C660FB /* LoginViewModel.swift */,
+				C132C1122B8B300C00C660FB /* LoginViewController.swift */,
+				C132C1172B8B357400C660FB /* Observable.swift */,
 				C132C1042B8B2FE100C660FB /* Main.storyboard */,
 				C132C1072B8B2FE300C660FB /* Assets.xcassets */,
 				C132C1092B8B2FE300C660FB /* LaunchScreen.storyboard */,
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = MVVMStudy;
+			packageProductDependencies = (
+				C132C1152B8B307600C660FB /* SnapKit */,
+			);
 			productName = MVVMStudy;
 			productReference = C132C0FB2B8B2FE100C660FB /* MVVMStudy.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = C132C0F22B8B2FE100C660FB;
+			packageReferences = (
+				C132C1142B8B307600C660FB /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = C132C0FC2B8B2FE100C660FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C132C1032B8B2FE100C660FB /* ViewController.swift in Sources */,
+				C132C1182B8B357400C660FB /* Observable.swift in Sources */,
+				C132C1132B8B300C00C660FB /* LoginViewController.swift in Sources */,
 				C132C0FF2B8B2FE100C660FB /* AppDelegate.swift in Sources */,
+				C132C11A2B8B38F900C660FB /* LoginViewModel.swift in Sources */,
 				C132C1012B8B2FE100C660FB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C132C1142B8B307600C660FB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C132C1152B8B307600C660FB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C132C1142B8B307600C660FB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C132C0F32B8B2FE100C660FB /* Project object */;
 }
