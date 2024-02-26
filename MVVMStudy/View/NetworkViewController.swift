@@ -14,16 +14,12 @@ class NetworkViewController: UIViewController {
     let segmentControl = UISegmentedControl(items: ["한국어", "영어"])
     let tableView = UITableView()
     
-    var list: [Market] = []
-    
     let viewModel = NetworkViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.outputMarketList.bind { _ in
-            self.tableView.reloadData()
-        }
+        viewModel.inputNetworkViewDidLoad.value = ()
         configureView()
         
     }
@@ -66,15 +62,15 @@ class NetworkViewController: UIViewController {
 
 extension NetworkViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return viewModel.outputMarketList.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
         if segmentControl.selectedSegmentIndex == 0 {
-            cell.textLabel?.text = list[indexPath.row].korean_name
+            cell.textLabel?.text = viewModel.outputMarketList.value[indexPath.row].korean_name
         } else {
-            cell.textLabel?.text = list[indexPath.row].english_name
+            cell.textLabel?.text = viewModel.outputMarketList.value[indexPath.row].english_name
         }
         return cell
     }

@@ -10,10 +10,14 @@ import Foundation
 
 class NetworkViewModel {
     
+    var inputNetworkViewDidLoad: Observable<Void?> = Observable(nil)
+    
     var outputMarketList: Observable<[Market]> = Observable([])
     
     init() {
-        callRequest()
+        inputNetworkViewDidLoad.bind { _ in
+            self.callRequest()
+        }
     }
     
     func callRequest() {
