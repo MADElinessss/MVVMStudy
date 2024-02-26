@@ -15,27 +15,17 @@ class NetworkViewController: UIViewController {
     let tableView = UITableView()
     
     var list: [Market] = []
+    
+    let viewModel = NetworkViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureView()
-        callRequest()
-    
-    }
-    
-    func callRequest() {
-        let url = "https://api.upbit.com/v1/market/all"
-        
-        AF.request(url).responseDecodable(of: [Market].self) { response in
-            switch response.result {
-            case .success(let success):
-                self.list = success
-                self.tableView.reloadData()
-            case .failure(_):
-                print("🚨")
-            }
+        viewModel.outputMarketList.bind { _ in
+            self.tableView.reloadData()
         }
+        configureView()
+        
     }
     
     func configureView() {
