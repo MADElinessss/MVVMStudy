@@ -20,6 +20,9 @@ class NetworkViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.inputNetworkViewDidLoad.value = ()
+        viewModel.outputMarketList.bind { _ in
+            self.tableView.reloadData()
+        }
         configureView()
         
     }
@@ -54,7 +57,6 @@ class NetworkViewController: UIViewController {
     }
     
     @objc func segmentChanged() {
-        
         tableView.reloadData()
     }
 
