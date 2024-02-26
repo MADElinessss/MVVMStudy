@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
     let resultLabel = UILabel()
+    let nextButton = UIButton()
     
     let viewModel = LoginViewModel()
 
@@ -33,7 +34,14 @@ class LoginViewController: UIViewController {
         
         emailTextField.addTarget(self, action: #selector(emailChanged), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         
+    }
+    
+    @objc func nextButtonTapped() {
+        print("3")
+        let vc = NetworkViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func emailChanged() {
@@ -51,6 +59,7 @@ class LoginViewController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(resultLabel)
+        view.addSubview(nextButton)
         
         emailTextField.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(44)
@@ -67,6 +76,15 @@ class LoginViewController: UIViewController {
             make.top.equalTo(passwordTextField.snp.bottom).offset(24)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(44)
         }
+        
+        nextButton.snp.makeConstraints { make in
+            make.top.equalTo(resultLabel.snp.bottom).offset(24)
+            make.centerX.equalTo(view)
+            make.height.equalTo(44)
+        }
+        
+        nextButton.backgroundColor = .orange
+        nextButton.setTitle("NEXT", for: .normal)
         
         emailTextField.backgroundColor = .systemGray6
         emailTextField.placeholder = "이메일을 입력해주세요."
